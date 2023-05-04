@@ -26,7 +26,7 @@ export const resolvers = {
     },
 
     // Query to fetch a single champion given its ID
-    champion: async (_, { id }) => {
+    champion: async (_: unknown, { id }: { id: string }) => {
       const response = await fetch(
         `https://ddragon.leagueoflegends.com/cdn/13.7.1/data/en_US/champion/${id}.json`
       )
