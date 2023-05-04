@@ -1,7 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { typeDefs, resolvers } from './schema/index.js';
-const port = parseInt(process.env.PORT);
+const port = parseInt(process.env.PORT) || 3000;
 console.log('port: ', port);
 const server = new ApolloServer({ typeDefs, resolvers });
 const { url } = await startStandaloneServer(server, {

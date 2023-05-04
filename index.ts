@@ -5,7 +5,7 @@ import { typeDefs, resolvers } from './schema/index.js'
 interface MyContext {
   token?: String
 }
-const port = parseInt(process.env.PORT)
+const port = parseInt(process.env.PORT) || 3000
 console.log('port: ', port)
 
 const server = new ApolloServer<MyContext>({ typeDefs, resolvers })
