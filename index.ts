@@ -5,11 +5,12 @@ import { typeDefs, resolvers } from './schema/index.js'
 interface MyContext {
   token?: String
 }
+const port = parseInt(process.env.PORT)
 
 const server = new ApolloServer<MyContext>({ typeDefs, resolvers })
 
 const { url } = await startStandaloneServer(server, {
   context: async ({ req }) => ({ token: req.headers.token }),
-  listen: { port: 4000 },
+  listen: { port: port },
 })
 console.log(`🚀  Server ready at ${url}`)
