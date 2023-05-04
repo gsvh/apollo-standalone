@@ -6,6 +6,7 @@ interface MyContext {
   token?: String
 }
 const port = parseInt(process.env.PORT)
+console.log('port: ', port)
 
 const server = new ApolloServer<MyContext>({ typeDefs, resolvers })
 
