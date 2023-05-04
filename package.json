@@ -11,10 +11,11 @@
   "license": "MIT",
   "dependencies": {
     "@apollo/server": "^4.7.1",
-    "graphql": "^16.6.0",
-    "typescript": "^5.0.4"
+    "graphql": "^16.6.0"
   },
-  "devDependencies": {},
   "author": "",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
 }
