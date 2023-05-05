@@ -22,9 +22,12 @@ export default async function () {
     });
     // Ensure we wait for our server to start
     await server.start();
+    app.get('/', (req, res) => {
+        return res.send('Express Typescript on Vercel');
+    });
     // Set up our Express middleware to handle CORS, body parsing,
     // and our expressMiddleware function.
-    app.use('/', cors(), bodyParser.json(), 
+    app.use('/graphql', cors(), bodyParser.json(), 
     // expressMiddleware accepts the same arguments:
     // an Apollo Server instance and optional configuration options
     expressMiddleware(server, {
